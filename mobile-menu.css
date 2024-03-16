@@ -1,0 +1,49 @@
+/* Media query for menu mobile devices --> */
+@media only screen and (max-width: 650px) {
+  .burger-menu {
+    display: block;
+    position: fixed;
+    right: 1rem;
+    top: 1rem;
+  }
+
+  .nav-items {
+    flex-direction: column;
+  }
+
+  .nav-wrapper {
+    height: 100vh;
+    flex-direction: column;
+    justify-content: start;
+    position: fixed;
+    left: -100%;
+    background-color: var(--mobile-nav-bc-color);
+    align-items: center;
+    width: 50%;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .hero-section {
+    height: 100vh;
+  }
+
+  /* active mobile menu --> */
+  .nav-wrapper.active {
+    left: 0;
+    box-shadow: 1px 1px 10px hsl(42, 74%, 80%);
+  }
+
+  /* burger menu transformation */
+  #burger-btn.active > .burger-bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  #burger-btn.active > .burger-bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  #burger-btn.active > .burger-bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+    background-color: hsl(42, 74%, 80%);
+  }
+}

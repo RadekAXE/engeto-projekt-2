@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Basic styling --> */
+:root {
+  --fc-white: hsl(0, 0%, 100%);
+  --fs-h1: clamp(2.5rem, 3rem + 2vw, 5rem);
+  --header-bc-color: hsl(211, 57%, 19%);
+  --mobile-nav-bc-color: hsla(211, 57%, 19%, 0.6);
+  --nav-hover-color: hsl(42, 74%, 80%);
+  --header-height: 4.375rem;
+  --footer-bc-color: hsl(0, 0%, 0%);
+}
+
+/* Responsive imgs --> */
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Header and Navigation styling --> */
+header {
+  background-color: var(--header-bc-color);
+}
+
+.nav-wrapper {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
+}
+
+.navigation a {
+  color: var(--fc-white);
+  text-decoration: none;
+}
+
+.navigation a:hover {
+  color: var(--nav-hover-color);
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+}
+
+.nav-items {
+  list-style-type: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Nav burger btn */
+.burger-menu {
+  display: none;
+  background: hsla(0, 0%, 0%, 0.3);
+  padding: 0.3em 0.5em;
+  border: none;
+  border-radius: 0.2rem;
+  outline: none;
+  cursor: pointer;
+  display: none;
+}
+
+.burger-menu:hover {
+  background: var(--header-bc-color);
+}
+
+.burger-bar {
+  display: block;
+  background-color: var(--fc-white);
+  width: 1.5rem;
+  height: 3px;
+  margin: 5px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hero section styling --> */
+.hero-section {
+  background: url(./media/background.webp);
+  height: calc(100vh - var(--header-height));
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--fc-white);
+}
+
+.hero-section__text {
+  font-size: var(--fs-h1);
+}
+
+/* About us --> gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  gap: 0.2rem;
+  width: 50%;
+  margin: 2rem auto 2rem auto;
+}
+
+.gallery-item > img {
+  object-fit: cover;
+}
+
+@media only screen and (min-width: 650px) {
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0.2rem;
+    width: 50%;
+    margin: 2rem auto 2rem auto;
+  }
+}
+
+/* Contact section --> */
+footer {
+  height: 30vh;
+  background-color: var(--footer-bc-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer h2 {
+  color: var(--fc-white);
+}
